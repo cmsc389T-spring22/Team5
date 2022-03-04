@@ -53,24 +53,83 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
+		if(type == Type.PACMAN){
+			if(field.get(loc) != wallSet){
+				field.get(loc).add(type);
+				locations.put(name, loc);
+				eatCookie(name);
+				return true;
+			}
+		}
+		if(type == Type.GHOST){
+			if(field.get(loc) != wallSet){
+				field.get(loc).add(type);
+				locations.put(name, loc);
+				return true;
+			}
+		}
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
+		return field.get(loc);
 		//wallSet and emptySet will help you write this method
-		return null;
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+		Location l = locations.get(Name);
+		Location pacLocation = locations.get("pacman");
+		int x_diff = l.x - pacLocation.x;
+		int y_diff = l.y - pacLocation.y;
+		//pacman is in range
+		if(Math.abs(x_diff) <= 1 && Math.abs(y_diff) <= 1){
+			gameOver = true;
+			locations.put(Name, pacLocation);
+			return true;
+		}
+		// if(field.get(new Location(l.x + 1, l.y)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x - 1, l.y)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x, l.y + 1)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x, l.y - 1)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x - 1, l.y - 1)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x + 1, l.y + 1)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x + 1, l.y - 1)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		// else if(field.get(new Location(l.x - 1, l.y + 1)).contains(Type.PACMAN)){
+		// 	gameOver = true;
+		// 	return true;
+		// }
+		else{
+			return false;
+		}
 	}
-	
+	//takes name of cookie and removes it
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		//Location loc = locations.get(name);
+		return components.remove(name);
 	}
 }
