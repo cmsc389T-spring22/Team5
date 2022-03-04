@@ -53,6 +53,21 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
+		if(type == Type.PACMAN){
+			if(field.get(loc) != wallSet){
+				field.get(loc).add(type);
+				locations.put(name, loc);
+				eatCookie(name);
+				return true;
+			}
+		}
+		if(type == Type.GHOST){
+			if(field.get(loc) != wallSet){
+				field.get(loc).add(type);
+				locations.put(name, loc);
+				return true;
+			}
+		}
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		return false;
