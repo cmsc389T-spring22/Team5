@@ -1,6 +1,7 @@
 # Project 1: PacMan
 
 Due: 03/04/2021, 11:59pm EDT
+Names: Kevin Chong, Dominic Bordone, Jingjing Nie
 
 ## Before You Start
 
