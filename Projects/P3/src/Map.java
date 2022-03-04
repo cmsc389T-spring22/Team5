@@ -64,8 +64,16 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+		Location l = locations.get(Name);
+		Location pacLocation = locations.get("pacman");
+		int x_diff = l.x - pacLocation.x;
+		int y_diff = l.y - pacLocation.y;
+		//pacman is in range
+		if(Math.abs(x_diff) <= 1 && Math.abs(y_diff) <= 1){
+			gameOver = true;
+			locations.put(Name, pacLocation);
+			return true;
+		}
 	}
 	
 	public JComponent eatCookie(String name) {
