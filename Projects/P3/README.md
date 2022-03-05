@@ -3,6 +3,13 @@
 Due: 03/04/2021, 11:59pm EDT
 Names: Kevin Chong, Dominic Bordone, Jingjing Nie
 
+
+Jingjing Nie:
+Pacman class - get_valid_moves()：Set the four directions of up, down, left, and right of the current location through the Location class, and get whether the four directions can move forward through the getLoc() method of the Map class. If not WALL, add them to the returned ArrayList
+Map class - move(): Find whether the location is WALL through wallSet, if not add the location to the location and return true, otherwise return false
+Ghost class - is_pacman_in_range(): Like get_valid_moves(), get from the two classes Location and Map whether the four positions of the upper, lower, left, and right are GHOST, if so, return true, otherwise return false
+
+
 ## Before You Start
 
 Make sure you have completed Project 0 and set up your local environment. Your project manager should have set up a repository for you and your team to complete. Make sure you are working with that repository.
