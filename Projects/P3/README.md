@@ -10,6 +10,7 @@ Map class - move(): Find whether the location is WALL through wallSet, if not ad
 Ghost class - is_pacman_in_range(): Like get_valid_moves(), get from the two classes Location and Map whether the four positions of the upper, lower, left, and right are GHOST, if so, return true, otherwise return false
 
 Dominic Bordone:
+
 Pacman class - is_ghost_in_range(): Checks all directions to see if there is a ghost one space away from Pacman, returns true if there is.
 
 Map class - get_loc(String name): Gets the location of the argument given as a string name.
