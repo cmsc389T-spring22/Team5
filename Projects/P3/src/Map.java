@@ -89,41 +89,7 @@ public class Map{
 			locations.put(Name, pacLocation);
 			return true;
 		}
-		// if(field.get(new Location(l.x + 1, l.y)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x - 1, l.y)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x, l.y + 1)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x, l.y - 1)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x - 1, l.y - 1)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x + 1, l.y + 1)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x + 1, l.y - 1)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		// else if(field.get(new Location(l.x - 1, l.y + 1)).contains(Type.PACMAN)){
-		// 	gameOver = true;
-		// 	return true;
-		// }
-		else{
-			return false;
-		}
+
 	}
 	//takes name of cookie and removes it
 	public JComponent eatCookie(String name) {
