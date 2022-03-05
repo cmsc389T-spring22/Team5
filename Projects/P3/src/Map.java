@@ -53,14 +53,29 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
+		if(type == Type.PACMAN){
+			if(field.get(loc) != wallSet){
+				field.get(loc).add(type);
+				locations.put(name, loc);
+				eatCookie(name);
+				return true;
+			}
+		}
+		if(type == Type.GHOST){
+			if(field.get(loc) != wallSet){
+				field.get(loc).add(type);
+				locations.put(name, loc);
+				return true;
+			}
+		}
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
+		return field.get(loc);
 		//wallSet and emptySet will help you write this method
-		return null;
 	}
 
 	public boolean attack(String Name) {
@@ -74,11 +89,13 @@ public class Map{
 			locations.put(Name, pacLocation);
 			return true;
 		}
+
 	}
-	
+	//takes name of cookie and removes it
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		//Location loc = locations.get(name);
+		return components.remove(name);
 	}
 }
