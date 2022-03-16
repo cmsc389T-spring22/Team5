@@ -89,6 +89,7 @@ public class Map{
 			locations.put(Name, pacLocation);
 			return true;
 		}
+		return false;
 
 	}
 	//takes name of cookie and removes it
