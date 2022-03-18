@@ -33,5 +33,22 @@ jobs:
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar;src/;tests/" org.junit.runner.JUnitCore TestMapGetLoc
 
-          
+ 
+
+test-get_valid_moves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Tests map get location
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a set of commands using the runners shell
+      - name: TestPacMan get_valid_moves
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
