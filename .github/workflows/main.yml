@@ -35,7 +35,6 @@ jobs:
 
  
 
-test-get_valid_moves:
     runs-on: ubuntu-latest
     container: openjdk
     # Tests map get location
