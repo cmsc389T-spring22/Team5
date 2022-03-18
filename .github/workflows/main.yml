@@ -48,6 +48,6 @@ jobs:
           cd Projects/P3
           java -version
           javac -version 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManValidMoves.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
