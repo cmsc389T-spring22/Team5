@@ -48,7 +48,8 @@ public class PacMan{
 	}
 
 	public boolean move() {
-
+		ArrayList<Location> loc = new ArrayList<Location>();
+		loc = this.get_valid_moves();
 		if(loc.isEmpty()){
 			return false;
 		}
@@ -67,7 +68,6 @@ public class PacMan{
 		HashSet<Map.Type> hash2 = myMap.getLoc(loc_down);
 		HashSet<Map.Type> hash3 = myMap.getLoc(loc_right);
 		HashSet<Map.Type> hash4 = myMap.getLoc(loc_left);
-
         if (hash1.contains(Map.Type.GHOST) || hash2.contains(Map.Type.GHOST) || hash3.contains(Map.Type.GHOST) || hash4.contains(Map.Type.GHOST)) {
 			return true;
 		}
