@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import java.util.Random;
 
 public class PacMan{
 	String myName;
@@ -49,11 +50,30 @@ public class PacMan{
 
 	public boolean move() {
 
-		if(loc.isEmpty()){
-			return false;
+		ArrayList<Location> validMoves = get_valid_moves();
+		HashSet<Integer> set = new HashSet<Integer>();
+		Random random = new Random();
+		
+		int i = 0;
+		while (i < validMoves.size()){
+			int move = random.nextInt(validMoves.size());
+			
+			if (!set.contains(move)) {
+				if (myMap.getLoc(validMoves.get(move)) != null) {
+					if (!myMap.getLoc(validMoves.get(move)).contains(Map.Type.WALL)) {
+						set.add(move);
+						myLoc = validMoves.get(move);
+						myMap.move("pacman", myLoc, Map.Type.PACMAN);
+						return true;
+					}
+				}
+			} else {
+				i--;
+			}
+			i++;
 		}
 
-		return true;
+		return false;
 
 	}
 	
