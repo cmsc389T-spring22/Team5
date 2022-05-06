@@ -43,8 +43,8 @@ jobs:
           cd Projects/P3
           java -version
           javac -version 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
   TestGhost_move:
     runs-on: ubuntu-latest
     container: openjdk
@@ -55,8 +55,8 @@ jobs:
           cd Projects/P3
           java -version
           javac -version 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
 
   TestGhost_valid_moves:
     runs-on: ubuntu-latest
@@ -68,5 +68,5 @@ jobs:
           cd Projects/P3
           java -version
           javac -version 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
