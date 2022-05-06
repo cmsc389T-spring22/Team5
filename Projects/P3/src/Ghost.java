@@ -19,11 +19,11 @@ public class Ghost{
 
 		ArrayList<Location> loc = get_valid_moves();
 
-		if (loc.isEmpty() == false) {
-			return true;
+		if (loc == null || loc.isEmpty() == false) {
+			return false;
 		} 
 		else{
-			return false;
+			return true;
 		}
 
 	}
@@ -38,7 +38,6 @@ public class Ghost{
 		HashSet<Map.Type> hash2 = myMap.getLoc(loc_down);
 		HashSet<Map.Type> hash3 = myMap.getLoc(loc_right);
 		HashSet<Map.Type> hash4 = myMap.getLoc(loc_left);
-
         if (hash1.contains(Map.Type.GHOST) || hash2.contains(Map.Type.GHOST) || hash3.contains(Map.Type.GHOST) || hash4.contains(Map.Type.GHOST)) {
 			return true;
 		}
