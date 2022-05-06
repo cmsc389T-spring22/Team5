@@ -19,7 +19,7 @@ public class Ghost{
 
 		ArrayList<Location> loc = get_valid_moves();
 
-		if (loc.isEmpty() == false) {
+		if (loc.isEmpty() == true) {
 			return true;
 		} 
 		else{
