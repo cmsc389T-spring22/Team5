@@ -33,21 +33,40 @@ jobs:
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapGetLoc.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar;src/;tests/" org.junit.runner.JUnitCore TestMapGetLoc
 
- 
-
+  TestPacMan_consume:
     runs-on: ubuntu-latest
     container: openjdk
-    # Tests map get location
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a set of commands using the runners shell
-      - name: TestPacMan get_valid_moves
+      - name: TestPacMan consume
         run: |
           cd Projects/P3
           java -version
           javac -version 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestConsume.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+  TestGhost_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: TestGhost move
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
 
+  TestGhost_valid_moves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: TestGhost get_valid_moves
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
