@@ -5,15 +5,15 @@ import java.io.*;
 public class TestAttack extends TestCase {
 
 	public void testAttack() throws FileNotFoundException{
-		NoFrame frame = new NoFrame();
+		NoFrame nf = new NoFrame();
 
-		// Creating Players
-		Ghost ghost = frame.addGhost(new Location(4, 6), "ghost", Color.red);
-		Ghost ghost1 = frame.addGhost(new Location(4, 5), "ghost", Color.green);
-		PacMan pacman = frame.addPacMan(new Location(4, 4));
+		PacMan pacman = nf.addPacMan(new Location(1, 1));
 
-		assertTrue(ghost.attack());
-		assertTrue(ghost1.attack());
+		Ghost blinky = nf.addGhost(new Location(1, 2), "Blinky", Color.red);
+		Ghost clyde = nf.addGhost(new Location(1, 3), "Clyde", Color.orange);
+
+		assertTrue(blinky.attack());
+		assertTrue(clyde.attack());
 
 	}
 }
