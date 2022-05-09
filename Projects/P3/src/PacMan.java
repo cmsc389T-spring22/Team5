@@ -48,10 +48,11 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		if(myloc.isEmpty()){
+		ArrayList<Location> loc = new ArrayList<Location>();
+		loc = this.get_valid_moves();
+		if(loc.isEmpty()){
 			return false;
 		}
-
 		return true;
 
 	}
