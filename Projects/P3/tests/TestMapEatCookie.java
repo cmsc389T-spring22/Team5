@@ -6,9 +6,17 @@ public class TestMapEatCookie {
 	
 	public void testMapEatCookie() {
 		NoFrame frame = new NoFrame();
-		Location location = new Location(1, 1);
-		PacMan pacman = frame.addPacMan(location);
-		Map m = frame.getMap();
-		assertFalse(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == false);
+
+		// Creating Players
+		PacMan pacman = frame.addPacMan(new Location(1, 0));
+
+		// Start The Game
+		frame.startGame();
+
+		if ((frame.getMap().getLoc(new Location(1, 0))).contains(Map.Type.COOKIE)) {
+			assertTrue(frame.getMap().eatCookie("pacman") != null);
+		} else {
+			assertTrue(frame.getMap().eatCookie("pacman") == null);
+		}
 	}
 }
