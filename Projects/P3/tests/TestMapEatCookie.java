@@ -5,11 +5,11 @@ import java.io.*;
 public class TestMapEatCookie {
 	
 	public void testMapEatCookie() {
-		NoFrame frame1 = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
-		Location loc1 = new Location(5,1);
-		
-		//Creating Players
-		PacMan pacman = frame1.addPacMan(loc1);
-		assertTrue(frame1.getMap().eatCookie("pacman") == null);
+		NoFrame frame = new NoFrame();
+		Location location = new Location(1, 1);
+		PacMan pacman = frame.addPacMan(location);
+		Map m = frame.getMap();
+
+		assertFalse(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == false);
 	}
 }
