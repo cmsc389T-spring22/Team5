@@ -9,7 +9,6 @@ public class TestMapEatCookie {
 		Location location = new Location(1, 1);
 		PacMan pacman = frame.addPacMan(location);
 		Map m = frame.getMap();
-
 		assertFalse(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == false);
 	}
 }
