@@ -11,7 +11,7 @@ public class TestMapGetLoc extends TestCase{
 			NoFrame frame = new NoFrame();
 			Ghost inky = frame.addGhost(new Location(2,2), "Inky", Color.red);
 			HashSet<Map.Type> set = frame.getMap().getLoc(new Location(2,2));
-			assertTrue(set.contains(Map.Type.COOKIE));
+			assertTrue(set.contains(Map.Type.GHOST));
 		} catch (FileNotFoundException e){
 			System.out.println(e);
 			return;

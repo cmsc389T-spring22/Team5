@@ -74,7 +74,8 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		return field.get(new Location((loc.x + 1), (loc.y + 1)));
+		if(field.get(loc) == null) return emptySet;
+		else return field.get(loc);
 		//wallSet and emptySet will help you write this method
 	}
 
