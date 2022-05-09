@@ -17,7 +17,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: TestAttack Run a multi-line script
+      - name: TestAttack
         run: |
           cd Projects/P3
           java -version
@@ -33,8 +33,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      - name: TestAttack Run a multi-line script
+      - name: TestConsume
         run: |
           cd Projects/P3
           java -version
@@ -50,8 +49,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      - name: TestAttack Run a multi-line script
+      - name: TestMapEatCookie
         run: |
           cd Projects/P3
           java -version
