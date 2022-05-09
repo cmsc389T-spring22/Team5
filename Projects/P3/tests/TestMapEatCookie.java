@@ -5,18 +5,17 @@ import java.io.*;
 public class TestMapEatCookie {
 	
 	public void testMapEatCookie() {
-		NoFrame frame = new NoFrame();
+		NoFrame nf = new NoFrame();
 
-		// Creating Players
-		PacMan pacman = frame.addPacMan(new Location(1, 0));
+		Map m = nf.getMap();
 
-		// Start The Game
-		frame.startGame();
+		Location loc = new Location(1, 1);
 
-		if ((frame.getMap().getLoc(new Location(1, 0))).contains(Map.Type.COOKIE)) {
-			assertTrue(frame.getMap().eatCookie("pacman") != null);
-		} else {
-			assertTrue(frame.getMap().eatCookie("pacman") == null);
-		}
+		assertFalse(m.getLoc(loc).contains(Map.Type.COOKIE));
+
+		PacMan pc = nf.addPacMan(loc);
+		m.eatCookie(pc.myName);
+
+		assertFalse(m.getLoc(loc).contains(Map.Type.COOKIE));
 	}
 }
