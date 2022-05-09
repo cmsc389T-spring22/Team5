@@ -48,8 +48,7 @@ public class PacMan{
 	}
 
 	public boolean move() {
-
-		if(loc.isEmpty()){
+		if(myloc.isEmpty()){
 			return false;
 		}
 
